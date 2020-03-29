@@ -1,4 +1,4 @@
-# Analysis of Metal Forming with Jupyter Notebooks
+# Analysis of Manufacturing Technologies with Jupyter Notebooks
 
 Run in the cloud via mybinder:
 
