@@ -1,4 +1,4 @@
-# Analysis of Manufacturing Technologies with Jupyter Notebooks
+# Analysis of Manufacturing Processes with Jupyter Notebooks
 
 Run in the cloud via mybinder:
 
