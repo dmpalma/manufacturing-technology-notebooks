@@ -66,7 +66,7 @@ def print_solution(exercise):
         UTS=330
         t=2
         alfa=0
-        Fprensa=500 # kN
+        Fprensa=500e3 # N
         Npiezas=500000
         rend=0.8
         
@@ -84,14 +84,14 @@ def print_solution(exercise):
         display(Markdown(r'Contorno exterior: $L_1 = %0.1f$ mm' % L1))
         display(Markdown(r'Contorno interior de una agujero: $L_2 = %0.1f$ mm' % L2))
         display(Markdown(r'Total contornos a cortar: $L = L_1 + 3 L_2 = %0.1f$ mm' % L))
-        display(Markdown(r'Fuerza para cortar una pieza: $F = %.0f$ N = %.0f kN' % (F, F/1000)))
+        display(Markdown(r'Fuerza para cortar una pieza: $F = %.0f$ N = %.1f kN' % (F, F/1000)))
     if exercise==2.2:
         display(Markdown(r'Hay 2 limitaciones, en la fuerza de corte y en las dimensiones máximas de la matriz.'))
-        display(Markdown(r'Por capacidad de la prensa: $n = \frac{F_{prensa}}{F} = %0.1f \qquad \rightarrow \qquad %.0f$ piezas' % (F/Fprensa, F/Fprensa)))
+        display(Markdown(r'Por capacidad de la prensa: $n = \frac{F_{prensa}}{F} = %0.1f \qquad \rightarrow \qquad %.0f$ piezas' % (Fprensa/F, math.floor(Fprensa/F))))
         display(Markdown(r'Por dimensiones de la matriz, $80 \times 80$ mm:'))
         display(Markdown(r'- En anchura no hay problema: el material de partida tiene 58 mm y la pieza final 54 mm.'))
-        display(Markdown(r'- En longitud, cada pieza tiene 25 mm y hay 2 mm de separación entre piezas. '))
-        display(Markdown(r'Por tanto, como máximo se pueden cortar 3 piezas de forma simultánea: 25 + 2 + 25 + 2 + 25 = 79 < 80 mm.'))
+        display(Markdown(r'- En longitud, cada pieza tiene 25 mm y hay 2 mm de separación entre piezas. Por tanto, como máximo se pueden cortar 3 piezas de forma simultánea: 25 + 2 + 25 + 2 + 25 = 79 < 80 mm.'))
+        display(Markdown(r'La mayor limitación es la geométrica. El máximo es de 3 piezas.'))
         display(Image(filename='matriz compuesta x3.png'))
     if exercise==2.3:
         display(Markdown(r'Trabajo de una pieza: $W = K_2 \cdot F \cdot t = %.1f$ J' %( W)))
